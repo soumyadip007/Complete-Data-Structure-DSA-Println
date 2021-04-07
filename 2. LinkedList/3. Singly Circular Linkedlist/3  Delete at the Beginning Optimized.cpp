@@ -56,12 +56,13 @@ void deleteAtBegining(){
 	node *del;
  	if(last->next==last){
 		del=last;
-		last=NULL;
+		last=NULL;	
 	}else{
-		node *del=last->next;
-		last->next=last->next->next;
-		free(del);		
+		del=last->next;
+		last->next=last->next->next;	
 	}
+	printf("\n\tDeleting %d\n",del->data);
+	free(del);	
 }
 
 int main(){	
