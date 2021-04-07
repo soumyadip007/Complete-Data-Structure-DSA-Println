@@ -26,7 +26,6 @@ void insert(){
 	}else{
 		temp->next=last->next;
 		last->next=temp;
-		last=last->next;
 	}
 
 	printf("\n\tSuccessfully inserted Data :)\n");
