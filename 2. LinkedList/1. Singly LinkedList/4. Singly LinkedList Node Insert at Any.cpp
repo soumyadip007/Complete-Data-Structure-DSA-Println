@@ -33,35 +33,19 @@ void insert(){
 
 
 void insertAtAny(){	
-	node *temp=createNode();
-	printf("\tEnter the data (for a specific position): ");
-	scanf("%d",&temp->data); //take data
-	temp->next=NULL;
-	int pos; 
-	printf("\tEnter the Position : ");
-	scanf("%d",&pos); //take position
-	int count=1;	
-	node *t=head, *prev;
-	if(pos<=0 || (pos>count  && head==NULL))
-		printf("\tInvalid\n");
-	else if(pos==1){
-		temp->next=head;
-	    head=temp;
-	}
-	else{
-		while(t->next!=NULL && count<pos){
-			prev=t;
-			t=t->next;
-			count++;
-		}
-		if(pos>count) {
-			printf("\tInvalid\n");
-		}	
-		else{
-			prev->next=temp;   
-			temp->next=t;	
-		}
-	}	
+node *temp=createNode();
+printf("\tEnter the data: ");
+scanf("%d",&temp->data);
+temp->next=NULL; int pos, count=1; 
+printf("\tEnter the Position : ");
+scanf("%d",&pos); node *t=head, *prev;
+if(pos<=0 || (pos>count  && head==NULL))printf("\tInvalid\n");
+else if(pos==1){temp->next=head;head=temp;
+}else{while(t->next!=NULL && count<pos){
+prev=t;t=t->next;count++;}
+if(pos>count) {printf("\tInvalid\n");}
+else{prev->next=temp;temp->next=t;}
+}	
 }
 
 
